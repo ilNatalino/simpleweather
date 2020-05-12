@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Meteo App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="main.js" charset="utf-8"></script>
+    <script defer src="skycons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/10e4b2398d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  </head>
+
+
+  <body>
+    <nav class="navbar">
+      <form class="barra-ricerca" action="">
+        <input type="text" placeholder="Inserisci la citta" class="testo-ricerca">
+        <button type="submit" name="button" class="button-ricerca">
+        <i class="fas fa-search fa-lg"></i></button>
+      </form>
+    </nav>
+
+
+    <div class="main">
+
+      <div class="principale">
+
+        <div class="today">
+
+          <div class="citta-icon">
+            <h1 class="nome-citta">Roma</h1>
+            <canvas class="icon" width="200" height="200"></canvas>
+          </div>
+
+
+          <div class="tabella">
+            <h1 class="temperature">28 C</h1>
+            <h1 class="text-meteo">Fa caur</h1>
+            <h2 class="umidity">Umidità 70%</h2>
+            <h2>Mercoledì 23 gennaio</h2>
+          </div>
+
+        </div>
+      </div>
+
+
+  </body>
+</html>
