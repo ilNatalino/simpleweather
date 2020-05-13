@@ -74,8 +74,9 @@ body{
   border-top-right-radius: 60px;
   border-bottom-left-radius: 60px;
 }
-.citta-icon h1{
+.nome-citta{
   color: white;
+  font-size: 30px;
 }
 .citta-icon{
   height: 80%;
@@ -109,6 +110,9 @@ body{
   .today{
     width: 865px;
   }
+  .nome-citta{
+    font-size: 35px;
+  }
 }
 @media only screen and (max-width:500px){
   .today{
@@ -123,14 +127,15 @@ body{
     height: 100px;
   }
   .nome-citta{
-    font-size: 35px;
+    font-size: 7vw;
   }
   .temperature{
-    font-size: 40px;
+    font-size: 9vw;
   }
   .text-meteo,
-  .umidity{
-    font-size: 20px;
+  .umidity,
+  .data-oggi{
+    font-size: 6vw;
   }
 
 }

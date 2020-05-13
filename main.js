@@ -37,14 +37,13 @@ function setIcona(position,icon){
   return skycons.set(position,Skycons[finalIcon]);
 }
 function setParametri(data){
-  nomeCitta.textContent = data.name;
+  nomeCitta.textContent = `${data.name}, ${data.sys.country}`;
   let temperatura = Math.floor(data.main.temp)
   temperaturaTesto.textContent = `${temperatura}°C`;
   umiditaDescription.textContent = `Umidità: ${data.main.humidity}%`;
   let descrizione = data.weather[0].description;
   let descrizioneFinale = descrizione[0].toUpperCase() + descrizione.slice(1);
   descrizioneMeteo.textContent = `${descrizioneFinale}`;
-  console.log(data);
   setIcona(document.querySelector(".icon"),data.weather[0].description);
 }
 
@@ -56,12 +55,24 @@ buttonRicerca.addEventListener("click",(e)=>{
   let ricerca = testoRicerca.value;
   let api = `https://api.openweathermap.org/data/2.5/weather?q=${ricerca}&appid=${keyAPI}&lang=it&units=metric`;
 
-  console.log(api);
   fetch(api)
-    .then(response => response.json())
-    .then(data =>{setParametri(data)});
+    .then( response => response.json() )
+    .then( data => setParametri(data) );
+
 
 
   testoRicerca.value = "";
 
 })
+function stampaData(){
+  let date = new Date();
+  let numeroGiorno = date.getDate();
+  let mese = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno",
+  "Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"];
+  let nomeGiorno = ["Domenica","Lunedì","Martedì","Mercoledì","Giovedì",
+  "Venerdì","Sabato"];
+  let dataFinale = `${nomeGiorno[date.getDay()]} ${numeroGiorno} ${mese[date.getMonth()]}`
+  let dataOggi = document.querySelector(".data-oggi");
+  dataOggi.textContent = dataFinale;
+}
+stampaData();
