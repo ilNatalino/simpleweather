@@ -1,5 +1,4 @@
 let keyAPI = "811069fec0ca1cb74d5b5da64b88caaf";
-let urlAPI = "https://api.openweathermap.org/data/2.5/weather?q=Gorizia&appid=" + keyAPI +"&lang=it";
 let temperaturaTesto = document.querySelector('.temperature');
 let nomeCitta = document.querySelector(".nome-citta");
 let umiditaDescription = document.querySelector(".umidity");
@@ -22,6 +21,7 @@ window.addEventListener("load", ()=>{
         })
       }
 })
+//Function per creare l'icona del meteo utilizzando la libreria skicons
 function setIcona(position,icon){
   let skycons = new Skycons({ color: "white"});
   let finalIcon;
@@ -36,6 +36,7 @@ function setIcona(position,icon){
   skycons.play();
   return skycons.set(position,Skycons[finalIcon]);
 }
+//Function che prende i dati dal JSON e li inserisce nel DOM
 function setParametri(data){
   nomeCitta.textContent = `${data.name}, ${data.sys.country}`;
   let temperatura = Math.floor(data.main.temp)
@@ -58,12 +59,10 @@ buttonRicerca.addEventListener("click",(e)=>{
   fetch(api)
     .then( response => response.json() )
     .then( data => setParametri(data) );
-
-
-
   testoRicerca.value = "";
-
 })
+
+//Function che calcola il giorno e il mese e li inserisce nel DOM
 function stampaData(){
   let date = new Date();
   let numeroGiorno = date.getDate();
