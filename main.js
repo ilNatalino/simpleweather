@@ -28,7 +28,7 @@ function setIcona(position,icon){
 
   if(icon == "cielo sereno") finalIcon = "CLEAR_DAY";
   if(icon == "poche nuvole" || icon == "nubi sparse") finalIcon = "PARTLY_CLOUDY_DAY";
-  else if (icon == "pioggerella"||icon == "piogga leggera"||icon == "acquazzone") finalIcon = "RAIN";
+  else if (icon == "pioggerella"||icon == "pioggia leggera"||icon == "acquazzone") finalIcon = "RAIN";
   else if (icon == "nebbia") finalIcon = "FOG";
   else if (icon == "neve") finalIcon = "SNOW";
   else if (icon == "cielo coperto") finalIcon = "CLOUDY";
